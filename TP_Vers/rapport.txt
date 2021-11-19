@@ -1,0 +1,4 @@
+Pour les vers, on utilise des verrous en écriture (exclusifs) bloquants pour qu'ils n'essaient pas d'écrire dans la même case.
+Ils mettent tous leurs verrous dans le même ordre ce qui empêche les deadlock (si 2 vers veulent verrouiller la même case, celui qui la verrouille en premier bloque l'autre).
+On n'utilise pas de verrou pour vision car il y a presque constamment des verrous en écriture quelque part dans le fichier, ce qui empêche de poser un verrou en lecture sur tout le fichier, et donc d'afficher le terrain.
+On ne fait qu'ajouter des marques sur les cases vides donc il n'y a pas de problème de données incohérentes (à moitié modifiées).
